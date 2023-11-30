@@ -27,7 +27,7 @@ USE Movies;
 GO
 
 /**********************************************************************************************************/
---Q-2: Create the "mov" schema under ìMoviesî.
+--Q-2: Create the "mov" schema under ‚ÄúMovies‚Äù.
 CREATE SCHEMA mov;
 GO
 
@@ -66,7 +66,7 @@ VALUES
   ('Seth', 'Gordon', 46, 'Male'),
   ('Alex', 'Kendrick', 52, 'Male'),
   ('Kevin', 'Lima', 60, 'Male'),
-  ('Lasse', 'Hallstrˆm', 76, 'Male'),
+  ('Lasse', 'Hallstr√∂m', 76, 'Male'),
   ('Ewan', 'McGregor', 52, 'Male'),
   ('Rajkumar', 'Hirani', 60, 'Male'),
   ('Ashutosh', 'Gowariker', 59, 'Male'),
@@ -254,40 +254,40 @@ SELECT * FROM mov.Movie_Actor;
 --d.List all the Rating information from the Rating table.
 SELECT * FROM mov.Movie_Rating;
 
---e List all the movie released in year ì2010î.
+--e List all the movie released in year ‚Äú2010‚Äù.
 SELECT * FROM mov.Movies WHERE Movie_Released_Year = 2010;
 
---f List all the movie released by ìThe Weinstein Companyî studio.
+--f List all the movie released by ‚ÄúThe Weinstein Company‚Äù studio.
 SELECT * FROM mov.Movies WHERE Movie_Lead_Studio = 'The Weinstein Company';
 
---g List all the movie released in ìEnglishî.
+--g List all the movie released in ‚ÄúEnglish‚Äù.
 SELECT * FROM mov.Movies WHERE Movie_Language = 'English';
 
---h	List all the movie whose name starts with ëGí.
+--h	List all the movie whose name starts with ‚ÄòG‚Äô.
 SELECT * FROM mov.Movies WHERE Movie_Name LIKE 'G%';
 
---i	Display all the movie under ìComedyî category.
+--i	Display all the movie under ‚ÄúComedy‚Äù category.
 SELECT * FROM mov.Movies WHERE Movie_Category = 'Comedy';
 
---j	Display all the movie where movie type is ìHollywoodî.
+--j	Display all the movie where movie type is ‚ÄúHollywood‚Äù.
 SELECT * FROM mov.Movies WHERE Movie_Type = 'Hollywood';
 
---k	Display all the ìFemaleî directors.
+--k	Display all the ‚ÄúFemale‚Äù directors.
 SELECT * FROM mov.Movie_Director WHERE Director_Gender = 'Female';
 
 --l	Display all the director whose Age is more than 45 years.
 SELECT * FROM mov.Movie_Director WHERE Director_Age_in_Years > 45;
 
---m	Display all the Actors from ìLos Angelesî.
+--m	Display all the Actors from ‚ÄúLos Angeles‚Äù.
 SELECT * FROM mov.Movie_Actor WHERE Actor_Location = 'Los Angeles';
 
 --n	Display all the Actor whose Age is less than 50 years.
 SELECT * FROM mov.Movie_Actor WHERE Actor_Age_in_Years < 50;
 
---o	Display all the Actor whose name is starts from ìJî.
+--o	Display all the Actor whose name is starts from ‚ÄúJ‚Äù.
 SELECT * FROM mov.Movie_Actor WHERE Actor_First_Name LIKE 'J%';
 
---p	Display all the Actor who is from ìLos Angelesî or ìNew Yorkî.
+--p	Display all the Actor who is from ‚ÄúLos Angeles‚Äù or ‚ÄúNew York‚Äù.
 SELECT * FROM mov.Movie_Actor WHERE Actor_Location IN ('Los Angeles', 'New York');
 
 --q	List Director_FullName, Director_Age_in_Years, Director_Gender from Director
@@ -408,7 +408,7 @@ WHERE Movie_ID IN (
 /**********************************************************************************************************/
 --Q11. Write the following Query based on the above datasets.
 
---a. Update the Rating_Audience_Score by 85% for the movie, released by ìThe Weinstein Companyî studio.
+--a. Update the Rating_Audience_Score by 85% for the movie, released by ‚ÄúThe Weinstein Company‚Äù studio.
 UPDATE mov.Movie_Rating
 SET Rating_Audience_Score = 85
 WHERE Movie_ID IN (
@@ -438,7 +438,7 @@ JOIN mov.Movie_Rating R ON M.Movie_ID = R.Movie_ID
 WHERE M.Movie_Released_Year = 2010;*/
 
 /**********************************************************************************************************/
---c. Increase the Actor Age by 2 years whose Name is ìMichael Ceraî.
+--c. Increase the Actor Age by 2 years whose Name is ‚ÄúMichael Cera‚Äù.
 UPDATE mov.Movie_Actor
 SET Actor_Age_in_Years = Actor_Age_in_Years + 2
 WHERE Actor_First_Name = 'Michael' AND Actor_Last_Name = 'Cera';
@@ -449,7 +449,7 @@ FROM mov.Movie_Actor
 WHERE Actor_First_Name = 'Michael' AND Actor_Last_Name = 'Cera';*/
 
 /**********************************************************************************************************/
---d. Increase the Director Age by 3 years who has directed the movie ìLeap Yearî.
+--d. Increase the Director Age by 3 years who has directed the movie ‚ÄúLeap Year‚Äù.
 UPDATE mov.Movie_Director
 SET Director_Age_in_Years = Director_Age_in_Years + 3
 WHERE Director_ID IN (
@@ -464,7 +464,7 @@ JOIN mov.Movie_Director D ON M.Director_ID = D.Director_ID
 WHERE M.Movie_Name = 'Leap Year';*/
 
 /**********************************************************************************************************/
---e. Increase the Director and Actor Age by 1 years who has directed the movie ìLeap Lear" and released by ìUniversalî studio.
+--e. Increase the Director and Actor Age by 1 years who has directed the movie ‚ÄúLeap Lear" and released by ‚ÄúUniversal‚Äù studio.
 SELECT M.Director_ID, A.Movie_ID
 INTO #MovieInfo -- Creating Temporary table MovieInfo
 FROM mov.Movies M
@@ -493,7 +493,7 @@ WHERE M.Movie_Name = 'Leap Year' AND M.Movie_Lead_Studio = 'Universal';*/
 /**********************************************************************************************************/
 --Q12. Write the following Query based on the above datasets.
 
---a. Create a view to display all the movie informationís.
+--a. Create a view to display all the movie information‚Äôs.
 
 IF OBJECT_ID('mov.v_MovieInfo', 'V') IS NOT NULL
   DROP VIEW mov.v_MovieInfo;     -- Drop the view if it already exists
