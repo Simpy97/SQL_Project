@@ -1,9 +1,9 @@
 # SQL_Project
 
 
-This Project appears to be a series of tasks related to creating and managing a database for storing information about movies, directors, actors, and movie ratings. The tasks involve defining database schemas, creating tables, adding constraints, inserting data, and performing various SQL queries. Below is a description of each task:
+## This Project appears to be a series of tasks related to creating and managing a database for storing information about movies, directors, actors, and movie ratings. The tasks involve defining database schemas, creating tables, adding constraints, inserting data, and performing various SQL queries. Below is a description of each task:
 
-1. Create a Database "Movies": I am instructed to create a new database with the name "Movies."
+### 1. Create a Database "Movies": I am instructed to create a new database with the name "Movies."
 
 2. Create a "mov" Schema Under "Movies": Within the "Movies" database, create a schema named "mov."
 
